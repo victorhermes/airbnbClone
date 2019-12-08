@@ -1,6 +1,8 @@
 import React from 'react';
-import Icon from 'react-native-vector-icons/Entypo';
+
 import { View, Text } from 'react-native';
+
+import Logo from '~/public/airbnb.svg';
 
 export default function Trips() {
   return (
@@ -13,6 +15,6 @@ export default function Trips() {
 Trips.navigationOptions = {
   tabBarLabel: 'Viagens',
   tabBarIcon: ({ tintColor }) => (
-    <Icon name="paper-plane" size={25} color={tintColor} />
+    <Logo width={25} height={25} fill={tintColor} />
   ),
 };

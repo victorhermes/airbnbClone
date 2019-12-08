@@ -4,6 +4,8 @@ import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import Explore from './pages/Explore';
 import Trips from './pages/Trips';
 import Saves from './pages/Saves';
+import Messages from './pages/Messages';
+import Profile from './pages/Profile';
 
 export default createAppContainer(
   createSwitchNavigator({
@@ -12,6 +14,8 @@ export default createAppContainer(
         Explore,
         Saves,
         Trips,
+        Messages,
+        Profile,
       },
       {
         tabBarOptions: {

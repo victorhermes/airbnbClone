@@ -1,11 +1,13 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/Feather';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+
+import SearchBar from '~/components/SearchBar';
 
 export default function Explore() {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Dashboard</Text>
+    <View>
+      <SearchBar />
     </View>
   );
 }

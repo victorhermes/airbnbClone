@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from 'react-native-vector-icons/Feather';
+import Icon from 'react-native-vector-icons/Entypo';
 import { View, Text } from 'react-native';
 
 export default function Trips() {
@@ -13,6 +13,6 @@ export default function Trips() {
 Trips.navigationOptions = {
   tabBarLabel: 'Viagens',
   tabBarIcon: ({ tintColor }) => (
-    <Icon name="search" size={25} color={tintColor} />
+    <Icon name="paper-plane" size={25} color={tintColor} />
   ),
 };

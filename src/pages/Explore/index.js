@@ -13,9 +13,12 @@ import {
   CardsImg,
   CardsText,
 } from './styles';
-import food from '~/public/food.jpg';
 
 import SearchBar from '~/components/SearchBar';
+
+import food from '~/public/food.jpg';
+import aventura from '~/public/aventura.jpg';
+import house from '~/public/house.jpg';
 
 export default function Explore() {
   return (
@@ -37,14 +40,14 @@ export default function Explore() {
               </CategoryContainer>
 
               <CategoryContainer>
-                <CategoryImg source={food} />
+                <CategoryImg source={aventura} />
                 <CategoryTextCont>
                   <CategoryText>Aventuras</CategoryText>
                 </CategoryTextCont>
               </CategoryContainer>
 
               <CategoryContainer>
-                <CategoryImg source={food} />
+                <CategoryImg source={house} />
                 <CategoryTextCont>
                   <CategoryText>Estadias</CategoryText>
                 </CategoryTextCont>

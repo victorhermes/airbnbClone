@@ -7,12 +7,12 @@ export const Container = styled.View.attrs({
   background-color: #ffffff;
 `;
 
-export const InputContainer = styled.View.attrs({})`
+export const InputContainer = styled.View`
   margin: 0 25px 10px;
   padding: 0 15px;
   height: 50px;
-  background: transparent;
-  border: 1px solid #5c5c5c;
+  background-color: #fff;
+  box-shadow: 0 0 5px #9c9c9c;
   border-radius: 10;
   flex-direction: row;
   align-items: center;

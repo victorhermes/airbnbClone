@@ -1,11 +1,12 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/Feather';
-import { View, ScrollView, Text, Image } from 'react-native';
+import { SafeAreaView, View, ScrollView, Text } from 'react-native';
 import {
-  SafeAreaView,
+  Container,
   TextTop,
   CategoryContainer,
   CategoryImg,
+  CategoryTextCont,
   CategoryText,
 } from './styles';
 import food from '~/public/food.jpg';
@@ -16,30 +17,34 @@ export default function Explore() {
   return (
     <View>
       <SearchBar />
-      <SafeAreaView>
+      <Container>
         <ScrollView>
           <TextTop>O que você deseja encontrar, Victor?</TextTop>
 
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <CategoryContainer>
               <CategoryImg source={food} />
-              <CategoryText>Aventuras</CategoryText>
+              <CategoryTextCont>
+                <CategoryText>Estadias</CategoryText>
+              </CategoryTextCont>
             </CategoryContainer>
+
             <CategoryContainer>
               <CategoryImg source={food} />
-              <CategoryText>Experiências</CategoryText>
+              <CategoryTextCont>
+                <CategoryText>Aventuras</CategoryText>
+              </CategoryTextCont>
             </CategoryContainer>
+
             <CategoryContainer>
               <CategoryImg source={food} />
-              <CategoryText>Estadias</CategoryText>
-            </CategoryContainer>
-            <CategoryContainer>
-              <CategoryImg source={food} />
-              <CategoryText>Culinária</CategoryText>
+              <CategoryTextCont>
+                <CategoryText>Estadias</CategoryText>
+              </CategoryTextCont>
             </CategoryContainer>
           </ScrollView>
         </ScrollView>
-      </SafeAreaView>
+      </Container>
     </View>
   );
 }

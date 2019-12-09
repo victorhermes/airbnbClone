@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.SafeAreaView`
+export const Container = styled.View`
   margin: 0 25px;
 `;
 
@@ -8,6 +8,10 @@ export const TextInformation = styled.Text`
   margin: 50px 0 5px;
   font-size: 30px;
   font-weight: bold;
+`;
+
+export const TextDescription = styled.Text`
+  font-size: 20px;
 `;
 
 export const CategoryContainer = styled.View`
@@ -32,3 +36,9 @@ export const CategoryText = styled.Text`
   padding: 15px 20px;
   font-size: 20px;
 `;
+
+export const CardsContainer = styled.View``;
+
+export const CardsImg = styled.Image``;
+
+export const CardsText = styled.Text``;

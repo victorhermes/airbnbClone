@@ -1,26 +1,30 @@
 import styled from 'styled-components/native';
+import { getStatusBarHeight } from 'react-native-status-bar-height';
 
-export const Container = styled.View`
+export const Container = styled.View.attrs({
+  paddingTop: getStatusBarHeight() + 15,
+})`
   background-color: #ffffff;
-  height: 115px;
 `;
 
-export const InputContainer = styled.View`
-  margin: 60px 30px;
-  padding: 0 15px;
-  height: 46px;
+export const InputContainer = styled.View.attrs({})`
+  margin: 0 25px 10px;
+  padding: 0 10px;
+  height: 50px;
   background: transparent;
-  border: 1px solid #000;
-  border-radius: 4px;
+  border: 1px solid #5c5c5c;
+  border-radius: 10;
   flex-direction: row;
   align-items: center;
 `;
 
 export const TInput = styled.TextInput.attrs({
-  placeholderTextColor: '#000000',
+  placeholderTextColor: '#5c5c5c',
 })`
   flex: 1;
-  font-size: 15px;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: bold;
   margin-left: 10px;
-  color: #000000;
+  color: #5c5c5c;
 `;

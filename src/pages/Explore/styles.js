@@ -4,14 +4,14 @@ export const Container = styled.SafeAreaView`
   margin: 0 25px;
 `;
 
-export const TextTop = styled.Text`
+export const TextInformation = styled.Text`
   margin: 50px 0 5px;
   font-size: 30px;
   font-weight: bold;
 `;
 
 export const CategoryContainer = styled.View`
-  padding: 30px 10px 30px 10px;
+  padding: 30px 10px 30px 5px;
 `;
 
 export const CategoryImg = styled.Image`

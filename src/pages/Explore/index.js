@@ -1,9 +1,9 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/Feather';
-import { SafeAreaView, View, ScrollView, Text } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import {
   Container,
-  TextTop,
+  TextInformation,
   CategoryContainer,
   CategoryImg,
   CategoryTextCont,
@@ -19,7 +19,9 @@ export default function Explore() {
       <SearchBar />
       <Container>
         <ScrollView>
-          <TextTop>O que você deseja encontrar, Victor?</TextTop>
+          <TextInformation>
+            O que você deseja encontrar, Victor?
+          </TextInformation>
 
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <CategoryContainer>
@@ -43,6 +45,10 @@ export default function Explore() {
               </CategoryTextCont>
             </CategoryContainer>
           </ScrollView>
+
+          <TextInformation>
+            Experiências com avaliações excelentes
+          </TextInformation>
         </ScrollView>
       </Container>
     </View>

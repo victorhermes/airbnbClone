@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Icon from 'react-native-vector-icons/Feather';
-import { Col, Row, Grid } from 'react-native-easy-grid';
+import { Col, Grid } from 'react-native-easy-grid';
 import {
   SafeAreaView,
   Dimensions,
@@ -17,8 +17,6 @@ import {
   CategoryImg,
   CategoryTextCont,
   CategoryText,
-  CardsContainer,
-  CardsImg,
   CardsText,
 } from './styles';
 
@@ -81,7 +79,7 @@ export default function Explore() {
               </TextDescription>
             </View>
 
-            <Grid>
+            <Grid style={{ marginTop: 30, marginBottom: 30 }}>
               <Col style={{ marginRight: 15 }}>
                 <View style={{ flex: 1 }}>
                   <Image
@@ -92,6 +90,7 @@ export default function Explore() {
                       height: getWidth / 4,
                     }}
                   />
+                  <CardsText>Acomocação na Praia</CardsText>
                 </View>
               </Col>
               <Col>
@@ -104,6 +103,7 @@ export default function Explore() {
                       height: getWidth / 4,
                     }}
                   />
+                  <CardsText>Quarto só seu na praia</CardsText>
                 </View>
               </Col>
             </Grid>

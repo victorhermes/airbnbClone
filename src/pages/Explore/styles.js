@@ -15,7 +15,7 @@ export const TextDescription = styled.Text`
 `;
 
 export const CategoryContainer = styled.View`
-  padding: 30px 10px 30px 5px;
+  padding: 30px 0 30px 20px;
 `;
 
 export const CategoryImg = styled.Image`
@@ -37,8 +37,11 @@ export const CategoryText = styled.Text`
   font-size: 20px;
 `;
 
-export const CardsContainer = styled.View``;
+export const CardsContainer = styled.View`
+  background: grey;
+  flex-grow: 1;
+`;
 
-export const CardsImg = styled.Image``;
+export const CardsImg = styled.View``;
 
 export const CardsText = styled.Text``;

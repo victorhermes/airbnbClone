@@ -82,7 +82,7 @@ export default function Explore() {
             </View>
 
             <Grid>
-              <Col style={{ backgroundColor: '#000', marginRight: 10 }}>
+              <Col style={{ marginRight: 15 }}>
                 <View style={{ flex: 1 }}>
                   <Image
                     source={food}
@@ -94,7 +94,7 @@ export default function Explore() {
                   />
                 </View>
               </Col>
-              <Col style={{ backgroundColor: '#f33' }}>
+              <Col>
                 <View style={{ flex: 1 }}>
                   <Image
                     source={house}

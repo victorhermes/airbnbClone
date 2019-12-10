@@ -37,11 +37,12 @@ export const CategoryText = styled.Text`
   font-size: 20px;
 `;
 
-export const CardsContainer = styled.View`
-  background: grey;
-  flex-grow: 1;
-`;
+export const CardsContainer = styled.View``;
 
-export const CardsImg = styled.View``;
+export const CardsImg = styled.Image`
+  flex: 1;
+  width: null;
+  height: null;
+`;
 
 export const CardsText = styled.Text``;

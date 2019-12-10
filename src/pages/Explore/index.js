@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Icon from 'react-native-vector-icons/Feather';
+import { Col, Row, Grid } from 'react-native-easy-grid';
 import {
   SafeAreaView,
   Dimensions,
@@ -27,13 +28,18 @@ import food from '~/public/food.jpg';
 import aventura from '~/public/aventura.jpg';
 import house from '~/public/house.jpg';
 
-const { width } = Dimensions.get('window');
-
 export default function Explore() {
+  const { width } = Dimensions.get('window');
+  const [getWidth, setWidth] = useState(width);
+
+  function onLayout() {
+    setWidth(Dimensions.get('window').width);
+  }
+
   return (
     <>
       <SearchBar />
-      <SafeAreaView style={{ flex: 1 }}>
+      <SafeAreaView onLayout={onLayout} style={{ flex: 1 }}>
         <ScrollView showsVerticalScrollIndicator={false}>
           <Container>
             <TextInformation>
@@ -56,7 +62,7 @@ export default function Explore() {
               </CategoryTextCont>
             </CategoryContainer>
 
-            <CategoryContainer>
+            <CategoryContainer style={{ paddingRight: 20 }}>
               <CategoryImg source={house} />
               <CategoryTextCont>
                 <CategoryText>Estadias</CategoryText>
@@ -75,40 +81,32 @@ export default function Explore() {
               </TextDescription>
             </View>
 
-            <View
-              style={{
-                marginTop: 20,
-                flexDirection: 'row',
-                flexWrap: 'wrap',
-                justifyContent: 'space-between',
-              }}>
-              <View style={{ width: width / 2 - 30, height: width / 3 - 30 }}>
-                <View style={{ flex: 1 }}>
-                  <Image
-                    source={house}
-                    style={{
-                      flex: 1,
-                      width: null,
-                      height: null,
-                      resizeMode: 'cover',
-                    }}
-                  />
-                </View>
-              </View>
-              <View style={{ width: width / 2 - 30, height: width / 3 - 30 }}>
+            <Grid>
+              <Col style={{ backgroundColor: '#000', marginRight: 10 }}>
                 <View style={{ flex: 1 }}>
                   <Image
                     source={food}
                     style={{
                       flex: 1,
                       width: null,
-                      height: null,
-                      resizeMode: 'cover',
+                      height: getWidth / 4,
                     }}
                   />
                 </View>
-              </View>
-            </View>
+              </Col>
+              <Col style={{ backgroundColor: '#f33' }}>
+                <View style={{ flex: 1 }}>
+                  <Image
+                    source={house}
+                    style={{
+                      flex: 1,
+                      width: null,
+                      height: getWidth / 4,
+                    }}
+                  />
+                </View>
+              </Col>
+            </Grid>
           </Container>
         </ScrollView>
       </SafeAreaView>

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Icon from 'react-native-vector-icons/Feather';
 import { Col, Grid } from 'react-native-easy-grid';
 import {
   SafeAreaView,
@@ -7,7 +6,8 @@ import {
   Image,
   View,
   ScrollView,
-  Text,
+  Button,
+  TouchableOpacity,
 } from 'react-native';
 import {
   Container,
@@ -26,7 +26,7 @@ import food from '~/public/food.jpg';
 import aventura from '~/public/aventura.jpg';
 import house from '~/public/house.jpg';
 
-export default function Explore() {
+export default function Explore({ navigation }) {
   const { width } = Dimensions.get('window');
   const [getWidth, setWidth] = useState(width);
 
@@ -47,10 +47,12 @@ export default function Explore() {
 
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <CategoryContainer>
-              <CategoryImg source={food} />
-              <CategoryTextCont>
-                <CategoryText>Estadias</CategoryText>
-              </CategoryTextCont>
+              <TouchableOpacity onPress={() => navigation.navigate('Ftrips')}>
+                <CategoryImg source={food} />
+                <CategoryTextCont>
+                  <CategoryText>Estadias</CategoryText>
+                </CategoryTextCont>
+              </TouchableOpacity>
             </CategoryContainer>
 
             <CategoryContainer>
@@ -90,6 +92,10 @@ export default function Explore() {
                       height: getWidth / 4,
                     }}
                   />
+                  <Button
+                    title="Go go"
+                    onPress={() => navigation.navigate('Ftrips')}
+                  />
                   <CardsText>Acomocação na Praia</CardsText>
                 </View>
               </Col>
@@ -115,8 +121,5 @@ export default function Explore() {
 }
 
 Explore.navigationOptions = {
-  tabBarLabel: 'Explorar',
-  tabBarIcon: ({ tintColor }) => (
-    <Icon name="search" size={25} color={tintColor} />
-  ),
+  header: null,
 };

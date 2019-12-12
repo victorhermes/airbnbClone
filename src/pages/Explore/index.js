@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import { Col, Grid } from 'react-native-easy-grid';
 import {
   SafeAreaView,
@@ -6,10 +8,12 @@ import {
   Image,
   View,
   ScrollView,
-  Button,
   TouchableOpacity,
 } from 'react-native';
 import {
+  ContainerSearch,
+  InputContainer,
+  TInput,
   Container,
   TextInformation,
   TextDescription,
@@ -19,8 +23,6 @@ import {
   CategoryText,
   CardsText,
 } from './styles';
-
-import SearchBar from '~/components/SearchBar';
 
 import food from '~/public/food.jpg';
 import aventura from '~/public/aventura.jpg';
@@ -36,7 +38,15 @@ export default function Explore({ navigation }) {
 
   return (
     <>
-      <SearchBar />
+      <ContainerSearch>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('ModalSearchScreem')}>
+          <InputContainer>
+            <Icon name="search" size={25} color="#5c5c5c" />
+            <TInput>Procurar algo...</TInput>
+          </InputContainer>
+        </TouchableOpacity>
+      </ContainerSearch>
       <SafeAreaView onLayout={onLayout} style={{ flex: 1 }}>
         <ScrollView showsVerticalScrollIndicator={false}>
           <Container>
@@ -46,7 +56,8 @@ export default function Explore({ navigation }) {
           </Container>
 
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-            <TouchableOpacity onPress={() => navigation.navigate('Ftrips')}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('FindTripsScreem')}>
               <CategoryContainer>
                 <CategoryImg source={food} />
                 <CategoryTextCont>
@@ -118,4 +129,10 @@ export default function Explore({ navigation }) {
 
 Explore.navigationOptions = {
   header: null,
+};
+
+Explore.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
 };

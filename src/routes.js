@@ -9,18 +9,34 @@ import Trips from './pages/Trips';
 import Saves from './pages/Saves';
 import Messages from './pages/Messages';
 import Profile from './pages/Profile';
-
 import FindTrips from './pages/FindTrips';
+import ModalSearch from './pages/ModalSearch';
 
-const SettingsStack = createStackNavigator({
-  Explore: { screen: Explore },
-  Ftrips: { screen: FindTrips },
+const Tabs = createStackNavigator({
+  ExploreScreem: Explore,
+  FindTripsScreem: FindTrips,
+  ModalSearchScreem: ModalSearch,
 });
+
+Tabs.navigationOptions = ({ navigation }) => {
+  let tabBarVisible = true;
+  for (let i = 0; i < navigation.state.routes.length; i++) {
+    if (navigation.state.routes[i].routeName === 'ModalSearchScreem') {
+      tabBarVisible = false;
+    }
+  }
+
+  return {
+    tabBarVisible,
+  };
+};
 
 export default createAppContainer(
   createBottomTabNavigator(
     {
-      Explore: { screen: SettingsStack },
+      Explore: {
+        screen: Tabs,
+      },
       Saves,
       Trips,
       Messages,

@@ -13,6 +13,7 @@ export const InputContainer = styled.View`
   height: 50px;
   background-color: #fff;
   box-shadow: 0 0 5px #9c9c9c;
+  elevation: 5;
   border-radius: 10;
   flex-direction: row;
   align-items: center;

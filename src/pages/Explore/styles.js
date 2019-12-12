@@ -30,6 +30,7 @@ export const CategoryTextCont = styled.View`
   border-bottom-left-radius: 10px;
   background-color: #fff;
   box-shadow: 0 0 5px #9c9c9c;
+  elevation: 5;
 `;
 
 export const CategoryText = styled.Text`

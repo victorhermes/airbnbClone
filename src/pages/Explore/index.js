@@ -46,14 +46,14 @@ export default function Explore({ navigation }) {
           </Container>
 
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-            <CategoryContainer>
-              <TouchableOpacity onPress={() => navigation.navigate('Ftrips')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Ftrips')}>
+              <CategoryContainer>
                 <CategoryImg source={food} />
                 <CategoryTextCont>
                   <CategoryText>Estadias</CategoryText>
                 </CategoryTextCont>
-              </TouchableOpacity>
-            </CategoryContainer>
+              </CategoryContainer>
+            </TouchableOpacity>
 
             <CategoryContainer>
               <CategoryImg source={aventura} />
@@ -91,10 +91,6 @@ export default function Explore({ navigation }) {
                       width: null,
                       height: getWidth / 4,
                     }}
-                  />
-                  <Button
-                    title="Go go"
-                    onPress={() => navigation.navigate('Ftrips')}
                   />
                   <CardsText>Acomocação na Praia</CardsText>
                 </View>

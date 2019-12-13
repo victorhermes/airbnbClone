@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Icon from 'react-native-vector-icons/Feather';
 import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
@@ -11,6 +12,14 @@ import Messages from './pages/Messages';
 import Profile from './pages/Profile';
 import FindTrips from './pages/FindTrips';
 import ModalSearch from './pages/ModalSearch';
+
+const SearchTabIcon = ({ tintColor }) => (
+  <Icon name="search" size={25} color={tintColor} />
+);
+
+SearchTabIcon.propTypes = {
+  tintColor: PropTypes.string.isRequired,
+};
 
 const Tabs = createStackNavigator({
   ExploreScreem: Explore,
@@ -44,9 +53,7 @@ export default createAppContainer(
     },
     {
       defaultNavigationOptions: () => ({
-        tabBarIcon: ({ tintColor }) => {
-          return <Icon name="search" size={25} color={tintColor} />;
-        },
+        tabBarIcon: SearchTabIcon,
         tabBarLabel: 'Explorar',
       }),
       tabBarOptions: {

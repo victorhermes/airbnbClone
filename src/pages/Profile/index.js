@@ -1,6 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Icon from 'react-native-vector-icons/SimpleLineIcons';
 import { View, Text } from 'react-native';
+
+const UserTabIcon = ({ tintColor }) => (
+  <Icon name="user" size={25} color={tintColor} />
+);
+
+UserTabIcon.propTypes = {
+  tintColor: PropTypes.string.isRequired,
+};
 
 export default function Profile() {
   return (
@@ -12,7 +21,5 @@ export default function Profile() {
 
 Profile.navigationOptions = {
   tabBarLabel: 'Perfil',
-  tabBarIcon: ({ tintColor }) => (
-    <Icon name="user" size={25} color={tintColor} />
-  ),
+  tabBarIcon: UserTabIcon,
 };

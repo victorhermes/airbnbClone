@@ -5,13 +5,14 @@ import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createStackNavigator } from 'react-navigation-stack';
 
-import Explore from './pages/Explore';
-import Trips from './pages/Trips';
-import Saves from './pages/Saves';
-import Messages from './pages/Messages';
-import Profile from './pages/Profile';
-import FindTrips from './pages/FindTrips';
-import ModalSearch from './pages/ModalSearch';
+import Explore from './pages/BottomTab/ExploreTab/Explore';
+import Trips from './pages/BottomTab/Trips';
+import Saves from './pages/BottomTab/Saves';
+import Messages from './pages/BottomTab/Messages';
+import Profile from './pages/BottomTab/Profile';
+
+import FindTrips from './pages/BottomTab/ExploreTab/FindTrips';
+import ModalSearch from './pages/BottomTab/ExploreTab/ModalSearch';
 
 const SearchTabIcon = ({ tintColor }) => (
   <Icon name="search" size={25} color={tintColor} />
@@ -21,13 +22,13 @@ SearchTabIcon.propTypes = {
   tintColor: PropTypes.string.isRequired,
 };
 
-const Tabs = createStackNavigator({
+const ExploreStacks = createStackNavigator({
   ExploreScreem: Explore,
   FindTripsScreem: FindTrips,
   ModalSearchScreem: ModalSearch,
 });
 
-Tabs.navigationOptions = ({ navigation }) => {
+ExploreStacks.navigationOptions = ({ navigation }) => {
   let tabBarVisible = true;
   for (let i = 0; i < navigation.state.routes.length; i++) {
     if (navigation.state.routes[i].routeName === 'ModalSearchScreem') {
@@ -44,7 +45,7 @@ export default createAppContainer(
   createBottomTabNavigator(
     {
       Explore: {
-        screen: Tabs,
+        screen: ExploreStacks,
       },
       Saves,
       Trips,

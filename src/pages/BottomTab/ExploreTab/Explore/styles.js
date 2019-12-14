@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 
 export const ContainerSearch = styled.View.attrs({
-  paddingTop: getStatusBarHeight() + 15,
+  paddingTop: getStatusBarHeight(),
 })`
   background-color: #ffffff;
 `;

@@ -1,11 +1,16 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-export default function ModalSearch() {
+import Input from '~/components/Input';
+
+export default function ModalSearch({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>ModalSearch</Text>
-    </View>
+    <>
+      <Input navigation={navigation} />
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>ModalSearch</Text>
+      </View>
+    </>
   );
 }
 

@@ -47,6 +47,7 @@ export default function Explore({ navigation }) {
           </InputContainer>
         </TouchableOpacity>
       </ContainerSearch>
+
       <SafeAreaView onLayout={onLayout} style={{ flex: 1 }}>
         <ScrollView showsVerticalScrollIndicator={false}>
           <Container>

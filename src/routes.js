@@ -14,6 +14,8 @@ import Profile from './pages/BottomTab/Profile';
 import FindTrips from './pages/BottomTab/ExploreTab/FindTrips';
 import ModalSearch from './pages/BottomTab/ExploreTab/ModalSearch';
 
+import Input from '~/components/Input';
+
 const SearchTabIcon = ({ tintColor }) => (
   <Icon name="search" size={25} color={tintColor} />
 );
@@ -26,6 +28,7 @@ const ExploreStacks = createStackNavigator({
   ExploreScreem: Explore,
   FindTripsScreem: FindTrips,
   ModalSearchScreem: ModalSearch,
+  InputScreem: Input,
 });
 
 ExploreStacks.navigationOptions = ({ navigation }) => {

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { TouchableOpacity } from 'react-native';
 import {
   ContainerSearch,
@@ -25,3 +26,9 @@ export default function Input({ navigation }) {
     </ContainerSearch>
   );
 }
+
+Input.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
+};

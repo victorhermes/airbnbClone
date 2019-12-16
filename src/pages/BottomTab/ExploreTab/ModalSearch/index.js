@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { SafeAreaView, ScrollView, View, Text } from 'react-native';
+import { ScrollView } from 'react-native';
 import {
   Container,
   RecentSearches,
@@ -79,4 +80,10 @@ export default function ModalSearch({ navigation }) {
 
 ModalSearch.navigationOptions = {
   header: null,
+};
+
+ModalSearch.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
 };

@@ -28,6 +28,7 @@ export const TInput = styled.TextInput`
 `;
 
 export const CancelButton = styled.Text`
-  font-size: 17px;
-  padding-right: 20px;
+  padding: 20px 0;
+  font-size: 15px;
+  margin-right: 20px;
 `;
